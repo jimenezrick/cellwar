@@ -12,13 +12,13 @@ typedef uint16_t coord_t;
 
 struct pos_t
 {
-	coord_t x_, y_;
+	const coord_t x_, y_;
 };
 
 struct command_t
 {
-	enum class cmd_t : uint8_t {move, attack, eat} cmd_;
-	pos_t target_;
+	const enum class cmd_t : uint8_t {move, attack, eat} cmd_;
+	const pos_t target_;
 };
 
 struct cell_t
@@ -43,7 +43,7 @@ class world_t
 
 	public:
 
-	coord_t width_, height_;
+	const coord_t width_, height_;
 
 	world_t(coord_t width, coord_t height):
 		data_(width * height, cell_t(0)),
